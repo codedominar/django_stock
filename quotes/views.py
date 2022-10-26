@@ -9,7 +9,7 @@ def home(request):
 
 	if request.method == 'POST':
 		ticker = request.POST['ticker']
-		api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=pk_7b9cda0da1f948c4952809a475f07fd6")
+		api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=###################")
 
 		try:
 			api = json.loads(api_request.content)
@@ -40,7 +40,7 @@ def add_stock(request):
 		ticker  = Stock.objects.all()
 		output = []
 		for ticker_item in ticker:
-			api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + str(ticker_item) + "/quote?token=pk_7b9cda0da1f948c4952809a475f07fd6")
+			api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + str(ticker_item) + "/quote?token=###################")
 
 			try:
 				api = json.loads(api_request.content)
